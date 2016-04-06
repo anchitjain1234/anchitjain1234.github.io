@@ -127,7 +127,7 @@ No. This is first time I am applying for GSoC.
 
 # Extra information 
 
-**Link to Resume** [https://www.anchitja.in/about-me/resume](https://www.anchitja.in/about-me/resume)
+**Link to Resume** [resume](http://www.anchitjain.com/assets/resume.pdf/)
 
 **Alternate contacts**
 
