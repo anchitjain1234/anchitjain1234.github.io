@@ -5,6 +5,9 @@ test:
   script:
   - gem install jekyll
   - gem install redcarpet
+  - gem install jekyll-paginate
+  - gem install jekyll-gist
+  - gem install jekyll-sitemap
   - jekyll build -d test
   artifacts:
     paths:
@@ -17,6 +20,9 @@ pages:
   script:
   - gem install jekyll
   - gem install redcarpet
+  - gem install jekyll-paginate
+  - gem install jekyll-gist
+  - gem install jekyll-sitemap
   - jekyll build -d public
   artifacts:
     paths:
