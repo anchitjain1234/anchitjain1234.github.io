@@ -8,6 +8,7 @@ test:
   - gem install jekyll-paginate
   - gem install jekyll-gist
   - gem install jekyll-sitemap
+  - gem install jekyll-seo-tag
   - jekyll build -d test
   artifacts:
     paths:
@@ -23,6 +24,7 @@ pages:
   - gem install jekyll-paginate
   - gem install jekyll-gist
   - gem install jekyll-sitemap
+  - gem install jekyll-seo-tag
   - jekyll build -d public
   artifacts:
     paths:
