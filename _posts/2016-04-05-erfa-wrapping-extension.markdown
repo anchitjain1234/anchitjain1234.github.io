@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "ERFA Wrapping Extension"
 date:   2016-04-05 20:00:00 +0530
 author: Anchit Jain
