@@ -1,0 +1,36 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+exclude: ["README.md"]
+# relative_permalinks: true
+gems: [jekyll-paginate, jekyll-gist, jekyll-sitemap]
+# Setup
+title:               Anchit Jain
+url:                 "/"
+paginate:            1
+baseurl:             ""
+
+twitter_username:     anchitjain1234
+github_username:      anchitjain1234
+linkedin_username:    anchitjain1234
+google_plus_username: anchitjain1234
+facebook_username:    anchit.jain.1234
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Anchit Jain
+  url:               http://www.anchitja.in
+
+pages_list:       
+  About: '/about'
+  Blog: '/blog'
+  Feed: '/atom.xml'
+
