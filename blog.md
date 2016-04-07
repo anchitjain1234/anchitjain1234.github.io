@@ -5,6 +5,16 @@ title: Blog
 
 ## Blog Posts
 
+{% for post in site.categories.projects %}
+  <h1>{{ post.title }}</h1>
+  {{ post.content }}
+{% endfor %}
+
 {% for post in site.posts %}
-  * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
+{% capture words %}
+  {{ post.content | number_of_words | minus: 180 }}
+{% endcapture %}
+  * {{ post.date | date_to_string }} ({% unless words contains "-" %}
+  {{ words | plus: 180 | divided_by: 180 | append: " _minutes to read_" }}
+{% endunless %}) &raquo; [ {{ post.title }} ]({{ post.url }})
 {% endfor %}

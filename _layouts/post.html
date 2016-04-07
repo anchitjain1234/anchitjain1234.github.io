@@ -27,6 +27,19 @@ layout: default
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 {% endif %}
 
+<div class="pagination">
+  {% if page.previous %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: page.previous.url }}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if page.next %}
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: page.next.url }}">Newer</a>
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
+
 {% if site.related_posts != empty %}
 <aside class="related">
   <h2>Related Posts</h2>
