@@ -3,8 +3,6 @@ layout: page
 title: Blog
 ---
 
-## Blog Posts
-
 {% for post in site.categories.projects %}
   <h1>{{ post.title }}</h1>
   {{ post.content }}
