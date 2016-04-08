@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<h1>Posts from {{ page.date | date: "%B %Y" }}</h1>
+
+<ul class="posts">
+{% for post in page.posts %}
+  <li>
+    {{ post.date | date_to_string }} {% include reading_time.html %} 
+	&raquo; <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>
+<br/><br/>

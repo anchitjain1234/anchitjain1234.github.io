@@ -9,6 +9,7 @@ test:
   - gem install jekyll-gist
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
+  - gem install jekyll-archives
   - jekyll build -d test
   artifacts:
     paths:
@@ -25,6 +26,7 @@ pages:
   - gem install jekyll-gist
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
+  - gem install jekyll-archives
   - jekyll build -d public
   artifacts:
     paths:

@@ -1,9 +1,11 @@
 ---
 layout: post
 comments: true
+permalink: gsoc_proposal
 title:  "GSoC Proposal"
 date:   2016-03-25 20:00:00 +0530
-categories: gsoc
+category: code
+tags: gsoc
 ---
 
 # Student Info

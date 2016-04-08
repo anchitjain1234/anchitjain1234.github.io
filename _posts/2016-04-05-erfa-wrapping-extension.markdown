@@ -2,9 +2,11 @@
 layout: post
 comments: true
 title:  "ERFA Wrapping Extension"
+permalink: erfa_intro
 date:   2016-04-05 20:00:00 +0530
 author: Anchit Jain
-categories: gsoc
+category: code
+tags: gsoc erfa
 ---
 Hi everyone,
 
