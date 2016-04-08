@@ -7,7 +7,7 @@ category: general
 tags: jekyll
 ---
 
-I initially did set up this blog on this domain using [Wordpress](https://wordpress.com/
+I initially did set up blog on this domain using [Wordpress](https://wordpress.com/
 ), as I have heard of its praise from many online blogs and websites.   
 It felt good because it has so many plugins, themes, and a really good CMS. You need to just login and type in their editor. But after a week or so, I decided to ditch it and go for Jekyll.
 

@@ -10,7 +10,8 @@ test:
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
   - gem install jekyll-archives
-  - jekyll build -d test
+  - gem install classifier-reborn
+  - jekyll build --lsi -d test
   artifacts:
     paths:
     - test
@@ -27,7 +28,8 @@ pages:
   - gem install jekyll-sitemap
   - gem install jekyll-seo-tag
   - gem install jekyll-archives
-  - jekyll build -d public
+  - gem install classifier-reborn
+  - jekyll build --lsi -d public
   artifacts:
     paths:
     - public
