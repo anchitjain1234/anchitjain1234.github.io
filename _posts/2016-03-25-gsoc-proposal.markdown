@@ -14,8 +14,8 @@ Here is my GSoC proposal. I have removed some of the personal information from i
 **Github** [anchitjain1234](https://github.com/anchitjain1234)  
 **IRC Nick** anchitjain@freenode   
 **Time Zone** IST (UTC + 05:30)  
-**GSOC Blog URL** [https://www.anchitja.in/blog/](https://www.anchitja.in/blog/)  
-**Blog RSS feed** [https://www.anchitja.in/blog/feed/](https://www.anchitja.in/blog/feed/)  
+**GSOC Blog URL** [http://www.anchitja.in/blog/](https://www.anchitja.in/blog/)  
+**Blog RSS feed** [http://www.anchitja.in/atom.xml/](http://www.anchitja.in/atom.xml)  
 **University information**
   
   * **University name** : [Birla Institute of Technology and Science Pilani](http://www.bits-pilani.ac.in/) 
@@ -129,7 +129,7 @@ No. This is first time I am applying for GSoC.
 
 # Extra information 
 
-**Link to Resume** [resume](http://www.anchitjain.com/assets/resume.pdf/)
+**Link to Resume** [resume](http://www.anchitja.in/assets/resume.pdf/)
 
 **Alternate contacts**
 
