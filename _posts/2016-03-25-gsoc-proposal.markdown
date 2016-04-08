@@ -1,12 +1,12 @@
 ---
 layout: post
 comments: true
-permalink: gsoc_proposal
 title:  "GSoC Proposal"
 date:   2016-03-25 20:00:00 +0530
 category: code
 tags: gsoc
 ---
+Here is my GSoC proposal. I have removed some of the personal information from it.
 
 # Student Info
 

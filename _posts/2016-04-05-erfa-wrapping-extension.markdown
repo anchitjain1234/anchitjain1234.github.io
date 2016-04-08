@@ -2,7 +2,6 @@
 layout: post
 comments: true
 title:  "ERFA Wrapping Extension"
-permalink: erfa_intro
 date:   2016-04-05 20:00:00 +0530
 author: Anchit Jain
 category: code
@@ -62,7 +61,7 @@ From this little exercise, I was able to somewhat understand the workflow in `_e
 [gsoc]: https://summerofcode.withgoogle.com/
 [openastro]: http://openastronomy.org/
 [astropy]: https://github.com/astropy/astropy
-[proposal]: ../../../../../gsoc/2016/03/25/gsoc-proposal/
+[proposal]: {{page.previous.url}}
 [sofa]: http://www.iausofa.org/
 [iau]: http://www.iau.org/
 [liberfa]: https://github.com/liberfa/erfa
