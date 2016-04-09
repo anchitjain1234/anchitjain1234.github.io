@@ -26,9 +26,9 @@ Currently `astropy._erfa` wraps only from `Astronomy` section and `AngleOps`, `S
 
 To test how the current infrastructure works if it is wrapped to all the sections of original erfa library I modified above code to always `True` condition
 
-``` python
+{% highlight python %}
 if True:
-```
+{% endhighlight %}
 
 and compiled the whole project again.
 And it failed. The error was:
@@ -49,9 +49,9 @@ Above error suggests that `eraCr` function was not wrapped correctly, which woul
 
 To test for other remaining sections I modified the code to
 
-``` python
+{% highlight python %}
 if not (subsection == "CopyExtendExtract"):
-```
+{% endhighlight %}
 
 This time, it compiled successfully and the whole package was set up.
 I tried to use some functions like `eraPmp` etc. and they all worked correctly. But it all needs to be checked carefully.
