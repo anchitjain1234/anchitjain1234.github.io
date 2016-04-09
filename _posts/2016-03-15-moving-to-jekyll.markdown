@@ -9,7 +9,7 @@ tags: jekyll
 
 I initially did set up blog on this domain using [Wordpress](https://wordpress.com/
 ), as I have heard of its praise from many online blogs and websites.   
-It felt good because it has so many plugins, themes, and a really good CMS. You need to just login and type in their editor. But after a week or so, I decided to ditch it and go for Jekyll.
+It felt good because it has so many plugins, themes, and a really good CMS. You need to just log in and type in their editor. But after a week or so, I decided to ditch it and go for Jekyll.
 
 Here are some of the good reasons that did move me to Jekyll
 
@@ -18,7 +18,7 @@ Here are some of the good reasons that did move me to Jekyll
 * It is mainly optimized for dynamic content and therefore slow.
 * It is resource heavy. I used [``t2.micro``](https://aws.amazon.com/ec2/instance-types/) AWS EC2 instance to host it, and it was constantly crashing even with a meagre load of 50 clients per second on stress testing.
 
-So I decided to give Jekyll a shot. To host it I used newly released [Gitlab Pages](https://pages.gitlab.io/) as it allows multiple CNAME records and custom SSL certificates which aren't available on GitHub pages (yet).
+So I decided to give Jekyll a shot. To host it I used newly released [Gitlab Pages](https://pages.gitlab.io/) as it allows multiple CNAME records with custom SSL certificates. Moreover, they also provide free shared runners which could be configured as per requirements by modifying ``.gitlab-ci.yml``. These features aren't available on [Github Pages](https://pages.github.com/) (yet).
 
 Setting up Jekyll was easy (though a bit difficult than  Wordpress which just needed to click buttons). There are numerous online guides available, I followed [http://joshualande.com/jekyll-github-pages-poole/](http://joshualande.com/jekyll-github-pages-poole/) with some of my own customizations like setting up tags, categories etc.   
 It took around 2-3 hours to set up a working blog. You can check the code here [https://gitlab.com/anchitjain1234/anchitjain1234.gitlab.io](https://gitlab.com/anchitjain1234/anchitjain1234.gitlab.io).
