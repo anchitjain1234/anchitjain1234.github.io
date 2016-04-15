@@ -2,6 +2,7 @@
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
+include: [.well-known]
 exclude: ["README.md"]
 # relative_permalinks: true
 gems: [jekyll-paginate, jekyll-gist, jekyll-sitemap, jekyll-seo-tag, jekyll-archives]
