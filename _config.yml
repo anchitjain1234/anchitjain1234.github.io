@@ -30,9 +30,9 @@ author:
   name:              Anchit Jain
   url:               http://www.anchitja.in
 
-pages_list:       
+pages_list:
   About: '/about'
-  Blog: '/blog'
+  Archive: '/blog'
   Feed: '/atom.xml'
 
 jekyll-archives:
