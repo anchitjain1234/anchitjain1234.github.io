@@ -3,7 +3,7 @@ image: ruby:2.3
 test:
   stage: test
   script:
-  - gem install jekyll
+  - gem install jekyll -v 3.1.2
   - gem install redcarpet
   - gem install jekyll-paginate
   - gem install jekyll-gist
@@ -21,7 +21,7 @@ test:
 pages:
   stage: deploy
   script:
-  - gem install jekyll
+  - gem install jekyll -v 3.1.2
   - gem install redcarpet
   - gem install jekyll-paginate
   - gem install jekyll-gist
