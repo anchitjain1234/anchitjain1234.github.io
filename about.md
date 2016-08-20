@@ -5,7 +5,7 @@ permalink: /about/
 ---
 Hi there,
 
-I am Anchit Jain, a 4th-year undergraduate student at [Birla Institute of Technology and Science Pilani][bits] (BITS PILANI), Pilani Campus majoring in Computer Science and Economics.
+I am Anchit Jain, a 5th-year undergraduate student at [Birla Institute of Technology and Science Pilani][bits] (BITS PILANI), Pilani Campus majoring in Computer Science and Economics.
 
 You could check my résumé [here][resume].
 
@@ -17,7 +17,7 @@ or find me on:
 <li><a href="https://twitter.com/anchitjain1234">Twitter</a></li>
 <li><a href="https://www.facebook.com/anchit.jain.1234">Facebook</a></li>
 </ul>
-More sensitive communication? View my public key at [Keybase][keybase].
+Sensitive communication? View my public key at [Keybase][keybase].
 
 Thanks for visiting my site.
 
