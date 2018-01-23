@@ -5,7 +5,7 @@ permalink: /about/
 ---
 Hi there,
 
-I am Anchit Jain, a 5th-year undergraduate student at [Birla Institute of Technology and Science Pilani][bits] (BITS PILANI), Pilani Campus majoring in Computer Science and Economics.
+I am Anchit Jain. I graduated from [Birla Institute of Technology and Science Pilani][bits] (BITS PILANI), Pilani Campus in 2017 majoring in Computer Science and Economics.
 
 You could check my résumé [here][resume].
 
