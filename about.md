@@ -5,7 +5,7 @@ permalink: /about/
 ---
 Hi there,
 
-I am Anchit Jain. I graduated from [Birla Institute of Technology and Science Pilani][bits] (BITS PILANI), Pilani Campus in 2017 majoring in Computer Science and Economics.
+I am Anchit Jain. I graduated from [Birla Institute of Technology and Science Pilani][bits] (BITS PILANI), Pilani Campus in 2017 majoring in Computer Science and Economics. I am currently working as a  Software Engineer in Samsung R&D Institute Bangalore.
 
 You could check my résumé [here][resume].
 
