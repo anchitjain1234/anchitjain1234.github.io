@@ -18,7 +18,6 @@ or find me on:
 <li><a href="https://www.facebook.com/anchit.jain.1234">Facebook</a></li>
 <li><a href="https://keybase.io/anchitjain1234">Keybase</a></li>
 </ul>
-<Sensitive communication? View my public key at [Keybase][keybase].>
 
 Thanks for visiting my site.
 
