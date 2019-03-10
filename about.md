@@ -5,7 +5,7 @@ permalink: /about/
 ---
 Hi there,
 
-I am Anchit Jain. I graduated from [Birla Institute of Technology and Science Pilani][bits] (BITS PILANI), Pilani Campus in 2017 majoring in Computer Science and Economics. I am currently working as a  Software Engineer in Samsung R&D Institute Bangalore.
+I am Anchit Jain. I graduated from [Birla Institute of Technology and Science Pilani][bits] (BITS PILANI), Pilani Campus in 2017 majoring in Computer Science and Economics. I am currently working as an SDE at Amazon India.
 
 You could check my résumé [here][resume].
 
@@ -16,8 +16,9 @@ or find me on:
 <li><a href="https://linkedin.com/in/anchitjain1234">LinkedIn</a></li>
 <li><a href="https://twitter.com/anchitjain1234">Twitter</a></li>
 <li><a href="https://www.facebook.com/anchit.jain.1234">Facebook</a></li>
+<li><a href="https://keybase.io/anchitjain1234">Keybase</a></li>
 </ul>
-Sensitive communication? View my public key at [Keybase][keybase].
+<Sensitive communication? View my public key at [Keybase][keybase].>
 
 Thanks for visiting my site.
 
