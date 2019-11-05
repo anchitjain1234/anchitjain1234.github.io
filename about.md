@@ -21,6 +21,7 @@ or find me on:
 
 Thanks for visiting my site.
 
+
 [bits]: http://www.bits-pilani.ac.in
 [resume]: ../assets/resume.pdf
 [keybase]: https://keybase.io/anchitjain1234
