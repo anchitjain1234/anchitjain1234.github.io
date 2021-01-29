@@ -9,7 +9,7 @@ I am Anchit Jain. I graduated from [Birla Institute of Technology and Science Pi
 
 You could check my résumé [here][resume].
 
-Need to contact me? Mail me at anchitjain1234 at gmail dot com  
+Need to contact me? Mail me at [me@anchitja.in](mailto:me@anchitja.in).  
 or find me on: 
 <ul>
 <li><a href="https://github.com/anchitjain1234">Github</a></li>
