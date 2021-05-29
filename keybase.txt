@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/anchitjain1234
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://anchitja.in
+  * I am anchitjain1234 (https://keybase.io/anchitjain1234) on keybase.
+  * I have a public key with fingerprint 51FC 7ECB 517B C27B A82A  CA5D F98D 5550 EF5A BCFA
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010128fa099252ee5518b26f16852bfa73507c2fdc04d465a648c02d5b58f933122a0a",
+      "fingerprint": "51fc7ecb517bc27ba82aca5df98d5550ef5abcfa",
+      "host": "keybase.io",
+      "key_id": "f98d5550ef5abcfa",
+      "kid": "010128fa099252ee5518b26f16852bfa73507c2fdc04d465a648c02d5b58f933122a0a",
+      "uid": "d95a0b67e4eb341c7d7c844bba7cad19",
+      "username": "anchitjain1234"
+    },
+    "service": {
+      "hostname": "anchitja.in",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1516726779,
+  "expire_in": 157680000,
+  "prev": "a80d041b338845cdb1cc060f38b58e5a252dc84e87c76cef909979d8c1fd039a",
+  "seqno": 29,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMIlAnicrVJZSFRRGB63ItuEMgt8qCtWU4Oeu5y7TD34UrQpFbQbw9muc0e7d7xz
+Z9JsKISCSIrM0KIiSKHwJW2BglLDIPAlNYmKVrKgJIqWFy06V+oleuy8HM75v+X/
+P/7+mVmB3IzltQtzeguUYxkDfeeSgZ1V1niDgB1aL4QbhGo2ebEayhJepNqiQlgA
+IhAl3UTAMCQoMQahqGNJNUVVhxI2kSZDoBHJpAQoVFEhUhWdAIlCDHXTkGVRkhBA
+QkgwLbuKuXHXsj0uC0WTaIxgKGqYSBpGuoQIgtQ0dAohBMyECBPTJ0adhM/gzWGU
+YCWWw//4IzLZ3j/w/7nv5KQcNSACWNWYwrCsiESjGtEVBWOkEURFwwcmmGujPYyj
+kU2ilhdDli1KsiKkQwKvpSzC/Hj9ef7ClVg2F4i7jucQp4YXop4XT4R9olcf95F7
+GY781ohgy6Y8TM5IMTdhObYQFjmSeJYvKkJR1SRV04yQwOrilssilo+AmqoDfnwf
+lvLNdUCBImJZ1nUFEopFQoAKTFnnETCIeGyUz8h0jWgqYabBo9QMqhPRpEA2/GwS
+rNZ2hLDErTxUxTUTVpWNvKTLhPTd3srsQEZuYEpOpr9lgdxpeX9272PX1IlpV1vq
+Xg229/Wc704/m3qlpbLsYGlH7P6l57P2t8LLM97d2hw8/nPYWbTqbJvR9Ozokta2
+F4c3Tbx+BcaCYxfuTYQOLC5IXcy6vaG+9MmdT3Jdzb5QUdv00swvncxc2lIxVNGw
+XWoIrt19YzHofJ8uHm2c3zh/9ZrjPXNRakt514fZ0UPrHvZt7X/TPzql4PNI6+No
+ZPVI3vjp/vW3Xg5lLivK7hjv3lZoJefNOfMgWRdj7s3mC3v3Zal5p9qDNz98731U
+u2Kg/enLgeXlxW3GLqOm4nH+sesnvpeVdCw4+e3bj8x09nBsR7kwsrJnjpsfI0cq
+fwy2NO0pLOi9Vtw81rxx1de3vwB9FUI1
+=GQrK
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/anchitjain1234
+
+==================================================================
