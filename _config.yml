@@ -43,3 +43,13 @@ jekyll-archives:
     day: archives/day
     tag: archives/tag_category
     category: archives/tag_category
+
+asciidoc: {}
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  attributes:
+    - idseparator=_
+    - source-highlighter=coderay
+    - icons=font
+
