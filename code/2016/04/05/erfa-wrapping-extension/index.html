@@ -2,7 +2,7 @@
 <html lang="en">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
   <title>ERFA Wrapping Extension | Anchit Jain</title>
-  <meta name="generator" content="Jekyll v3.8.7" />
+  <meta name="generator" content="Jekyll v4.2.0" />
   <meta property="og:title" content="ERFA Wrapping Extension" />
   <meta name="author" content="Anchit Jain" />
   <meta property="og:locale" content="en_US" />
@@ -160,17 +160,28 @@
           </p>
 
           <p>
-            In Astropy <code class="highlighter-rouge">_erfa</code> is a python
-            interface, not publically exposed, which wraps around original C
-            functions, creating and exposing vectorized versions of them. Main
-            parts in <code class="highlighter-rouge">_erfa</code> are Jinja 2
-            templates <code class="highlighter-rouge">core.c.templ</code> and
-            <code class="highlighter-rouge">core.py.templ</code>. These combined
-            with
-            <code class="highlighter-rouge">erfa_generator.py</code> generates
-            the wrapper code, splitting the wrappers into python portion
-            <code class="highlighter-rouge">core.py</code> and C portion
-            <code class="highlighter-rouge">core.c</code>.
+            In Astropy
+            <code class="language-plaintext highlighter-rouge">_erfa</code> is a
+            python interface, not publically exposed, which wraps around
+            original C functions, creating and exposing vectorized versions of
+            them. Main parts in
+            <code class="language-plaintext highlighter-rouge">_erfa</code> are
+            Jinja 2 templates
+            <code class="language-plaintext highlighter-rouge"
+              >core.c.templ</code
+            >
+            and
+            <code class="language-plaintext highlighter-rouge"
+              >core.py.templ</code
+            >. These combined with
+            <code class="language-plaintext highlighter-rouge"
+              >erfa_generator.py</code
+            >
+            generates the wrapper code, splitting the wrappers into python
+            portion
+            <code class="language-plaintext highlighter-rouge">core.py</code>
+            and C portion
+            <code class="language-plaintext highlighter-rouge">core.c</code>.
           </p>
 
           <p>
@@ -186,14 +197,25 @@
           </p>
 
           <p>
-            Currently <code class="highlighter-rouge">astropy._erfa</code> wraps
-            only from <code class="highlighter-rouge">Astronomy</code> section
-            and <code class="highlighter-rouge">AngleOps</code>,
-            <code class="highlighter-rouge">SphericalCartesian</code>
+            Currently
+            <code class="language-plaintext highlighter-rouge"
+              >astropy._erfa</code
+            >
+            wraps only from
+            <code class="language-plaintext highlighter-rouge">Astronomy</code>
+            section and
+            <code class="language-plaintext highlighter-rouge">AngleOps</code>,
+            <code class="language-plaintext highlighter-rouge"
+              >SphericalCartesian</code
+            >
             subsections under
-            <code class="highlighter-rouge">VectorMatrix</code> section from the
-            original erfa library. This could be checked in
-            <code class="highlighter-rouge">erfa_generator.py</code>
+            <code class="language-plaintext highlighter-rouge"
+              >VectorMatrix</code
+            >
+            section from the original erfa library. This could be checked in
+            <code class="language-plaintext highlighter-rouge"
+              >erfa_generator.py</code
+            >
             <a
               href="https://github.com/astropy/astropy/blob/master/astropy/_erfa/erfa_generator.py#L398"
               >here</a
@@ -203,7 +225,9 @@
           <p>
             To test how the current infrastructure works if it is wrapped to all
             the sections of original erfa library I modified above code to
-            always <code class="highlighter-rouge">True</code> condition
+            always
+            <code class="language-plaintext highlighter-rouge">True</code>
+            condition
           </p>
 
           <figure class="highlight">
@@ -214,7 +238,7 @@
             and compiled the whole project again. And it failed. The error was:
           </p>
 
-          <div class="highlighter-rouge">
+          <div class="language-plaintext highlighter-rouge">
             <div class="highlight">
               <pre
                 class="highlight"
@@ -233,8 +257,9 @@ error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
 
           <p>
             Above error suggests that
-            <code class="highlighter-rouge">eraCr</code> function was not
-            wrapped correctly, which would need changing the templates.
+            <code class="language-plaintext highlighter-rouge">eraCr</code>
+            function was not wrapped correctly, which would need changing the
+            templates.
           </p>
 
           <p>To test for other remaining sections I modified the code to</p>
@@ -246,14 +271,16 @@ error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
           <p>
             This time, it compiled successfully and the whole package was set
             up. I tried to use some functions like
-            <code class="highlighter-rouge">eraPmp</code> etc. and they all
-            worked correctly. But it all needs to be checked carefully.
+            <code class="language-plaintext highlighter-rouge">eraPmp</code>
+            etc. and they all worked correctly. But it all needs to be checked
+            carefully.
           </p>
 
           <p>
             From this little exercise, I was able to somewhat understand the
-            workflow in <code class="highlighter-rouge">_erfa</code> and relate
-            to the changes the project would be needing.
+            workflow in
+            <code class="language-plaintext highlighter-rouge">_erfa</code> and
+            relate to the changes the project would be needing.
           </p>
         </article>
 
@@ -345,7 +372,7 @@ error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
       </main>
 
       <footer class="footer">
-        &copy; <time datetime="2021-05-29T08:07:35+00:00">2021</time>. All
+        &copy; <time datetime="2021-05-29T08:25:36+00:00">2021</time>. All
         rights reserved.
       </footer>
     </div>

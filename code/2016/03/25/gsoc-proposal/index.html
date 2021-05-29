@@ -2,7 +2,7 @@
 <html lang="en">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
   <title>GSoC Proposal | Anchit Jain</title>
-  <meta name="generator" content="Jekyll v3.8.7" />
+  <meta name="generator" content="Jekyll v4.2.0" />
   <meta property="og:title" content="GSoC Proposal" />
   <meta name="author" content="Anchit Jain" />
   <meta property="og:locale" content="en_US" />
@@ -177,7 +177,7 @@
 
           <p>
             I have submitted following patches to
-            <code class="highlighter-rouge">astropy</code>
+            <code class="language-plaintext highlighter-rouge">astropy</code>
           </p>
 
           <h5 id="merged-">Merged :</h5>
@@ -186,12 +186,15 @@
             <li>
               <a href="https://github.com/astropy/astropy/pull/4606">#4606</a> -
               Support for Path objects in
-              <code class="highlighter-rouge">io</code> packages.
+              <code class="language-plaintext highlighter-rouge">io</code>
+              packages.
             </li>
             <li>
               <a href="https://github.com/astropy/astropy/pull/4561">#4561</a> -
               Remove new line characters after last row of data in
-              <code class="highlighter-rouge">ascii.latex.AASTex</code>.
+              <code class="language-plaintext highlighter-rouge"
+                >ascii.latex.AASTex</code
+              >.
             </li>
             <li>
               <a href="https://github.com/astropy/astropy/pull/4532">#4532</a> -
@@ -204,8 +207,9 @@
             </li>
             <li>
               <a href="https://github.com/astropy/astropy/pull/4474">#4474</a> -
-              Fix for <code class="highlighter-rouge">CDS</code> reader
-              requiring at least two description characters.
+              Fix for
+              <code class="language-plaintext highlighter-rouge">CDS</code>
+              reader requiring at least two description characters.
             </li>
           </ol>
 
@@ -215,7 +219,10 @@
             <li>
               <a href="https://github.com/astropy/astropy/pull/4585">#4585</a> -
               Error handling in
-              <code class="highlighter-rouge">io.fits.compression</code> module.
+              <code class="language-plaintext highlighter-rouge"
+                >io.fits.compression</code
+              >
+              module.
             </li>
             <li>
               <a href="https://github.com/astropy/astropy/pull/4574">#4574</a> -
@@ -225,13 +232,19 @@
             <li>
               <a href="https://github.com/astropy/astropy/pull/4551">#4551</a> -
               Explicitly set
-              <code class="highlighter-rouge">BeautifulSoup</code> parser to
-              <code class="highlighter-rouge">html.parser</code> to avoid
-              warning.
+              <code class="language-plaintext highlighter-rouge"
+                >BeautifulSoup</code
+              >
+              parser to
+              <code class="language-plaintext highlighter-rouge"
+                >html.parser</code
+              >
+              to avoid warning.
             </li>
             <li>
               <a href="https://github.com/astropy/astropy/pull/4505">#4505</a> -
-              Fix for allowing <code class="highlighter-rouge">WCS</code> to
+              Fix for allowing
+              <code class="language-plaintext highlighter-rouge">WCS</code> to
               take Image HDU.
             </li>
           </ol>
@@ -258,18 +271,27 @@
               <ol>
                 <li>
                   Create a separate package under
-                  <code class="highlighter-rouge">liberfa</code> which would be
-                  having 100% coverage for ERFA functions, good test coverage
-                  and documentation such that it follows all the guidelines for
-                  <code class="highlighter-rouge">astropy</code> affiliated
-                  package.
+                  <code class="language-plaintext highlighter-rouge"
+                    >liberfa</code
+                  >
+                  which would be having 100% coverage for ERFA functions, good
+                  test coverage and documentation such that it follows all the
+                  guidelines for
+                  <code class="language-plaintext highlighter-rouge"
+                    >astropy</code
+                  >
+                  affiliated package.
                 </li>
                 <li>
                   Use the new package in astropy replacing
-                  <code class="highlighter-rouge">_erfa</code> and discuss for
-                  replacing overlapping code between
-                  <code class="highlighter-rouge">astropy</code> python code and
-                  ERFA.
+                  <code class="language-plaintext highlighter-rouge"
+                    >_erfa</code
+                  >
+                  and discuss for replacing overlapping code between
+                  <code class="language-plaintext highlighter-rouge"
+                    >astropy</code
+                  >
+                  python code and ERFA.
                 </li>
               </ol>
             </li>
@@ -279,13 +301,17 @@
                 <li>
                   Working python based ERFA package wrapping original C based
                   ERFA package, strictly adhering to
-                  <code class="highlighter-rouge">astropy</code> affiliated
-                  package guidelines.
+                  <code class="language-plaintext highlighter-rouge"
+                    >astropy</code
+                  >
+                  affiliated package guidelines.
                 </li>
                 <li>
                   Removal of
-                  <code class="highlighter-rouge">astropy._erfa</code> and use
-                  of this new python based ERFA package as external (but
+                  <code class="language-plaintext highlighter-rouge"
+                    >astropy._erfa</code
+                  >
+                  and use of this new python based ERFA package as external (but
                   bundled) dependency.
                 </li>
               </ol>
@@ -298,18 +324,24 @@
                 ERFA is Essential Routines for Fundamental Astronomy which
                 implements high-quality astronomical routines in C.<br />
                 Currently astropy uses ERFA in
-                <code class="highlighter-rouge">coordinates</code> and
-                <code class="highlighter-rouge">time</code> subpackages for some
-                angle utilities, conversions and time conversion, formatting by
-                using
-                <code class="highlighter-rouge">_erfa</code> subpackage.<br />
+                <code class="language-plaintext highlighter-rouge"
+                  >coordinates</code
+                >
+                and
+                <code class="language-plaintext highlighter-rouge">time</code>
+                subpackages for some angle utilities, conversions and time
+                conversion, formatting by using
+                <code class="language-plaintext highlighter-rouge">_erfa</code>
+                subpackage.<br />
                 But it has been under discussion in community for a long time
                 (<a href="https://github.com/astropy/astropy/pull/3123">#3123</a
                 >,
                 <a href="https://github.com/astropy/astropy/pull/4571">#4571</a
                 >) to use ERFA as an external package in
-                <code class="highlighter-rouge">astropy</code> by exposing ERFA
-                as public API. Recently (<a
+                <code class="language-plaintext highlighter-rouge"
+                  >astropy</code
+                >
+                by exposing ERFA as public API. Recently (<a
                   href="https://github.com/astropy/astropy/pull/4664"
                   >#4664</a
                 >) there has been also some discussion to whether replace python
@@ -326,14 +358,26 @@
                   </h4>
                   <p>
                     Right now for ERFA functionality, astropy uses
-                    <code class="highlighter-rouge">_erfa</code> subpackage
-                    which wraps ERFA functions only from
-                    <code class="highlighter-rouge">Astronomy</code> section,
-                    <code class="highlighter-rouge">AngleOps</code> and
-                    <code class="highlighter-rouge">SphericalCartesian</code>
+                    <code class="language-plaintext highlighter-rouge"
+                      >_erfa</code
+                    >
+                    subpackage which wraps ERFA functions only from
+                    <code class="language-plaintext highlighter-rouge"
+                      >Astronomy</code
+                    >
+                    section,
+                    <code class="language-plaintext highlighter-rouge"
+                      >AngleOps</code
+                    >
+                    and
+                    <code class="language-plaintext highlighter-rouge"
+                      >SphericalCartesian</code
+                    >
                     subsections under
-                    <code class="highlighter-rouge">VectorMatrix</code> section.
-                    <br />
+                    <code class="language-plaintext highlighter-rouge"
+                      >VectorMatrix</code
+                    >
+                    section. <br />
                     In this phase I propose to increase wrapping and test
                     coverage, improve function names and documentation.<br />
                     I intend to do this in 3 subphases:
@@ -345,26 +389,31 @@
                         <li>
                           First I would start with Astropy affiliated package
                           template and using the existing
-                          <code class="highlighter-rouge">_erfa</code> code in
-                          it, to create a new package possibly named
-                          <code class="highlighter-rouge">pyerfa</code>. Then I
-                          intend to extend it(wrapping) to all the remaining
-                          sections/subsections such that package could be
-                          imported as independent package, and all the ERFA
+                          <code class="language-plaintext highlighter-rouge"
+                            >_erfa</code
+                          >
+                          code in it, to create a new package possibly named
+                          <code class="language-plaintext highlighter-rouge"
+                            >pyerfa</code
+                          >. Then I intend to extend it(wrapping) to all the
+                          remaining sections/subsections such that package could
+                          be imported as independent package, and all the ERFA
                           functions would work without worrying about
                           correctness of the results, just get every ERFA
                           function working.
                         </li>
                         <li>
                           Currently functions under
-                          <code class="highlighter-rouge"
+                          <code class="language-plaintext highlighter-rouge"
                             >CopyExtendExtract</code
                           >
                           under
-                          <code class="highlighter-rouge">VectorMatrix</code> do
-                          give some weird error on wrapping. So my first task
+                          <code class="language-plaintext highlighter-rouge"
+                            >VectorMatrix</code
+                          >
+                          do give some weird error on wrapping. So my first task
                           would be to parse functions under
-                          <code class="highlighter-rouge"
+                          <code class="language-plaintext highlighter-rouge"
                             >CopyExtendExtract</code
                           >
                           correctly.
@@ -377,10 +426,14 @@
                         </li>
                         <li>
                           Existing
-                          <code class="highlighter-rouge">docstring</code>
+                          <code class="language-plaintext highlighter-rouge"
+                            >docstring</code
+                          >
                           parser would need to be modified such that new parts
                           to the
-                          <code class="highlighter-rouge">docstrings</code>
+                          <code class="language-plaintext highlighter-rouge"
+                            >docstrings</code
+                          >
                           could be added which are not present currently in
                           original C library.
                         </li>
@@ -398,12 +451,14 @@
                           This would involve testing the wrappings under
                           different values of arguments and input types etc.
                           using
-                          <code class="highlighter-rouge">py.test</code> module
-                          and following Astropy standard for testing.
+                          <code class="language-plaintext highlighter-rouge"
+                            >py.test</code
+                          >
+                          module and following Astropy standard for testing.
                         </li>
                         <li>
                           Existing C test suite for ERFA (<code
-                            class="highlighter-rouge"
+                            class="language-plaintext highlighter-rouge"
                             >t_erfa_c.c</code
                           >) would be ported to Python by automatic conversion
                           in the similar manner, by creating parsing templates
@@ -428,11 +483,14 @@
                           for the functions from ERFA as current names are very
                           cryptic which don’t suit well for code readability and
                           understanding. For example.
-                          <code class="highlighter-rouge">eraAb</code> is a
-                          function in ERFA that performs aberration to transform
-                          natural direction into proper direction but this isn’t
-                          very much clear from this name. Documentation
-                          improvement would go hand in hand with name aliasing
+                          <code class="language-plaintext highlighter-rouge"
+                            >eraAb</code
+                          >
+                          is a function in ERFA that performs aberration to
+                          transform natural direction into proper direction but
+                          this isn’t very much clear from this name.
+                          Documentation improvement would go hand in hand with
+                          name aliasing
                         </li>
                         <li>
                           Name aliasing would involve manual work of checking
@@ -443,12 +501,20 @@
                         <li>
                           Documentation improvement would include updating of
                           current
-                          <code class="highlighter-rouge">docstrings</code>
+                          <code class="language-plaintext highlighter-rouge"
+                            >docstrings</code
+                          >
                           generated by C comments to include examples following
-                          <code class="highlighter-rouge">doctest</code>, short
-                          summary and other notes to follow
-                          <code class="highlighter-rouge">numpy</code> style
-                          <code class="highlighter-rouge">docstrings</code>.
+                          <code class="language-plaintext highlighter-rouge"
+                            >doctest</code
+                          >, short summary and other notes to follow
+                          <code class="language-plaintext highlighter-rouge"
+                            >numpy</code
+                          >
+                          style
+                          <code class="language-plaintext highlighter-rouge"
+                            >docstrings</code
+                          >.
                         </li>
                       </ul>
                     </li>
@@ -467,22 +533,34 @@
                     <li>
                       <h6 id="update-_erfa-usage">
                         Update
-                        <code class="highlighter-rouge">_erfa</code> usage
+                        <code class="language-plaintext highlighter-rouge"
+                          >_erfa</code
+                        >
+                        usage
                       </h6>
                       <ul>
                         <li>
-                          As <code class="highlighter-rouge">_erfa</code> would
-                          no longer be needed therefore update usages of
-                          <code class="highlighter-rouge">_erfa</code> by the
-                          new package and get everything working
+                          As
+                          <code class="language-plaintext highlighter-rouge"
+                            >_erfa</code
+                          >
+                          would no longer be needed therefore update usages of
+                          <code class="language-plaintext highlighter-rouge"
+                            >_erfa</code
+                          >
+                          by the new package and get everything working
                         </li>
                         <li>
                           This would be done by creating new ERFA package as
                           external dependency by placing it in
-                          <code class="highlighter-rouge">astropy/extern</code>
+                          <code class="language-plaintext highlighter-rouge"
+                            >astropy/extern</code
+                          >
                           and update its usages. Then
-                          <code class="highlighter-rouge">_erfa</code> would be
-                          removed.
+                          <code class="language-plaintext highlighter-rouge"
+                            >_erfa</code
+                          >
+                          would be removed.
                         </li>
                       </ul>
                     </li>
@@ -499,11 +577,15 @@
                         <li>
                           Here first I would try to find parts of code where
                           ERFA could be used, mainly in
-                          <code class="highlighter-rouge">coordinates</code>,
-                          <code class="highlighter-rouge">time</code> etc. This
-                          would be done by carefully looking at the existing
-                          codebase to check whether ERFA function would suit
-                          here.
+                          <code class="language-plaintext highlighter-rouge"
+                            >coordinates</code
+                          >,
+                          <code class="language-plaintext highlighter-rouge"
+                            >time</code
+                          >
+                          etc. This would be done by carefully looking at the
+                          existing codebase to check whether ERFA function would
+                          suit here.
                         </li>
                         <li>
                           Then using performance analysis and discussion with
@@ -513,7 +595,9 @@
                         <li>
                           Performance analysis would be done using
                           <a href="https://github.com/spacetelescope/asv"
-                            ><code class="highlighter-rouge">asv</code></a
+                            ><code class="language-plaintext highlighter-rouge"
+                              >asv</code
+                            ></a
                           >
                           by writing benchmarks first for existing code and then
                           for code using ERFA.
@@ -541,20 +625,35 @@
                   <strong>Community bonding period (22 Apr - 22 May)</strong>
                 </td>
                 <td>
-                  Check <code class="highlighter-rouge">astropy._erfa</code> and
-                  <code class="highlighter-rouge">liberfa/erfa</code> code
-                  closely, discuss concrete approach with mentors, read
-                  documentation for <code class="highlighter-rouge">asv</code>,
-                  <code class="highlighter-rouge">cython</code> .
+                  Check
+                  <code class="language-plaintext highlighter-rouge"
+                    >astropy._erfa</code
+                  >
+                  and
+                  <code class="language-plaintext highlighter-rouge"
+                    >liberfa/erfa</code
+                  >
+                  code closely, discuss concrete approach with mentors, read
+                  documentation for
+                  <code class="language-plaintext highlighter-rouge">asv</code>,
+                  <code class="language-plaintext highlighter-rouge"
+                    >cython</code
+                  >
+                  .
                 </td>
               </tr>
               <tr>
                 <td><strong>Week 1 (23 May - 29 May)</strong></td>
                 <td>
                   1. Setup new repository using
-                  <code class="highlighter-rouge">astropy</code> affiliated
-                  package guidelines and
-                  <code class="highlighter-rouge">_erfa</code> existing code.<br />
+                  <code class="language-plaintext highlighter-rouge"
+                    >astropy</code
+                  >
+                  affiliated package guidelines and
+                  <code class="language-plaintext highlighter-rouge"
+                    >_erfa</code
+                  >
+                  existing code.<br />
                   2. Make this repository work independently without Astropy.
                 </td>
               </tr>
@@ -562,7 +661,9 @@
                 <td><strong>Week 2 (30 May - 5 June)</strong></td>
                 <td>
                   1. Extend to
-                  <code class="highlighter-rouge">CopyExtendExtract</code>
+                  <code class="language-plaintext highlighter-rouge"
+                    >CopyExtendExtract</code
+                  >
                   subsection.<br />
                   2.Modify parsing templates.
                 </td>
@@ -577,7 +678,8 @@
               <tr>
                 <td><strong>Week 4 (13 June - 19 June)</strong></td>
                 <td>
-                  Port original test suite(<code class="highlighter-rouge"
+                  Port original test suite(<code
+                    class="language-plaintext highlighter-rouge"
                     >t_erfa_c.c</code
                   >) to Python is similar manner (automated like wrapping).
                 </td>
@@ -602,17 +704,25 @@
                 <td>
                   1. Use new ERFA python wrappings package.<br />
                   2.Remove existing
-                  <code class="highlighter-rouge">_erfa</code> subpackage from
-                  <code class="highlighter-rouge">astropy</code>.
+                  <code class="language-plaintext highlighter-rouge"
+                    >_erfa</code
+                  >
+                  subpackage from
+                  <code class="language-plaintext highlighter-rouge"
+                    >astropy</code
+                  >.
                 </td>
               </tr>
               <tr>
                 <td><strong>Week 9 (18 July - 24 July )</strong></td>
                 <td>
                   Check carefully astropy code, mainly in sections
-                  <code class="highlighter-rouge">coordinates</code> and
-                  <code class="highlighter-rouge">time</code> where existing
-                  python code could be replaced by ERFA function.
+                  <code class="language-plaintext highlighter-rouge"
+                    >coordinates</code
+                  >
+                  and
+                  <code class="language-plaintext highlighter-rouge">time</code>
+                  where existing python code could be replaced by ERFA function.
                 </td>
               </tr>
               <tr>
@@ -781,7 +891,7 @@
       </main>
 
       <footer class="footer">
-        &copy; <time datetime="2021-05-29T08:07:35+00:00">2021</time>. All
+        &copy; <time datetime="2021-05-29T08:25:36+00:00">2021</time>. All
         rights reserved.
       </footer>
     </div>

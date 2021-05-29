@@ -4,7 +4,7 @@
  <title>Anchit Jain</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2021-05-29T08:07:35+00:00</updated>
+ <updated>2021-05-29T08:25:36+00:00</updated>
  <id></id>
  <author>
    <name>Anchit Jain</name>
@@ -56,23 +56,23 @@ I really felt heartbroken after the result but as they say&lt;/p&gt;
 
 &lt;p&gt;ERFA is a C library containing key algorithms for astronomy and is based on the &lt;a href=&quot;http://www.iausofa.org/&quot;&gt;SOFA&lt;/a&gt; library published by the &lt;a href=&quot;http://www.iau.org/&quot;&gt;International Astronomical Union&lt;/a&gt; (IAU). It implements high-quality astronomical routines for coordinate, time etc. More about ERFA can be seen &lt;a href=&quot;https://github.com/liberfa/erfa&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;In Astropy &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; is a python interface, not publically exposed, which wraps around original C functions, creating and exposing vectorized versions of them.
-Main parts in &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; are  Jinja 2 templates &lt;code class=&quot;highlighter-rouge&quot;&gt;core.c.templ&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;core.py.templ&lt;/code&gt;. These combined with &lt;code class=&quot;highlighter-rouge&quot;&gt;erfa_generator.py&lt;/code&gt; generates the wrapper code, splitting the wrappers into python portion &lt;code class=&quot;highlighter-rouge&quot;&gt;core.py&lt;/code&gt; and C portion &lt;code class=&quot;highlighter-rouge&quot;&gt;core.c&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In Astropy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; is a python interface, not publically exposed, which wraps around original C functions, creating and exposing vectorized versions of them.
+Main parts in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; are  Jinja 2 templates &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;core.c.templ&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;core.py.templ&lt;/code&gt;. These combined with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;erfa_generator.py&lt;/code&gt; generates the wrapper code, splitting the wrappers into python portion &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;core.py&lt;/code&gt; and C portion &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;core.c&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;The main goal of my project is to pull out pull this wrapper out of astropy and instead make a standalone Python wrapper library so that any project can use it without needing Astropy.&lt;/p&gt;
 
 &lt;p&gt;To get to know the extent to which the modifications in existing wrapper would be needed I tried to do some quick &lt;em&gt;hacks&lt;/em&gt; on it.&lt;/p&gt;
 
-&lt;p&gt;Currently &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy._erfa&lt;/code&gt; wraps only from &lt;code class=&quot;highlighter-rouge&quot;&gt;Astronomy&lt;/code&gt; section and &lt;code class=&quot;highlighter-rouge&quot;&gt;AngleOps&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;SphericalCartesian&lt;/code&gt; subsections under &lt;code class=&quot;highlighter-rouge&quot;&gt;VectorMatrix&lt;/code&gt; section from the original erfa library. This could be checked in &lt;code class=&quot;highlighter-rouge&quot;&gt;erfa_generator.py&lt;/code&gt; &lt;a href=&quot;https://github.com/astropy/astropy/blob/master/astropy/_erfa/erfa_generator.py#L398&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Currently &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy._erfa&lt;/code&gt; wraps only from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Astronomy&lt;/code&gt; section and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AngleOps&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SphericalCartesian&lt;/code&gt; subsections under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VectorMatrix&lt;/code&gt; section from the original erfa library. This could be checked in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;erfa_generator.py&lt;/code&gt; &lt;a href=&quot;https://github.com/astropy/astropy/blob/master/astropy/_erfa/erfa_generator.py#L398&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;To test how the current infrastructure works if it is wrapped to all the sections of original erfa library I modified above code to always &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; condition&lt;/p&gt;
+&lt;p&gt;To test how the current infrastructure works if it is wrapped to all the sections of original erfa library I modified above code to always &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;True&lt;/code&gt; condition&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;and compiled the whole project again.
 And it failed. The error was:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;astropy/_erfa/core.c: In function ‘Py_cr’:
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;astropy/_erfa/core.c: In function ‘Py_cr’:
 astropy/_erfa/core.c:5376:9: error: too few arguments to function ‘eraCr’
 eraCr(*_r);
 ^
@@ -83,16 +83,16 @@ void eraCr(double r[3][3], double c[3][3]);
 error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Above error suggests that &lt;code class=&quot;highlighter-rouge&quot;&gt;eraCr&lt;/code&gt; function was not wrapped correctly, which would need changing the templates.&lt;/p&gt;
+&lt;p&gt;Above error suggests that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eraCr&lt;/code&gt; function was not wrapped correctly, which would need changing the templates.&lt;/p&gt;
 
 &lt;p&gt;To test for other remaining sections I modified the code to&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subsection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;CopyExtendExtract&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This time, it compiled successfully and the whole package was set up.
-I tried to use some functions like &lt;code class=&quot;highlighter-rouge&quot;&gt;eraPmp&lt;/code&gt; etc. and they all worked correctly. But it all needs to be checked carefully.&lt;/p&gt;
+I tried to use some functions like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eraPmp&lt;/code&gt; etc. and they all worked correctly. But it all needs to be checked carefully.&lt;/p&gt;
 
-&lt;p&gt;From this little exercise, I was able to somewhat understand the workflow in &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; and relate to the changes the project would be needing.&lt;/p&gt;
+&lt;p&gt;From this little exercise, I was able to somewhat understand the workflow in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; and relate to the changes the project would be needing.&lt;/p&gt;
 
 </content>
  </entry>
@@ -124,25 +124,25 @@ I tried to use some functions like &lt;code class=&quot;highlighter-rouge&quot;&
 
 &lt;h1 id=&quot;code-sample&quot;&gt;Code Sample&lt;/h1&gt;
 
-&lt;p&gt;I have submitted following patches to &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I have submitted following patches to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy&lt;/code&gt;&lt;/p&gt;
 
 &lt;h5 id=&quot;merged-&quot;&gt;Merged :&lt;/h5&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4606&quot;&gt;#4606&lt;/a&gt; - Support for Path objects in &lt;code class=&quot;highlighter-rouge&quot;&gt;io&lt;/code&gt; packages.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4561&quot;&gt;#4561&lt;/a&gt; - Remove new line characters after last row of data in &lt;code class=&quot;highlighter-rouge&quot;&gt;ascii.latex.AASTex&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4606&quot;&gt;#4606&lt;/a&gt; - Support for Path objects in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;io&lt;/code&gt; packages.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4561&quot;&gt;#4561&lt;/a&gt; - Remove new line characters after last row of data in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ascii.latex.AASTex&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4532&quot;&gt;#4532&lt;/a&gt; - Fix to generate zero-length copy of current table.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4482&quot;&gt;#4482&lt;/a&gt; - Displaying Compound model expressions when printing compound model instances.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4474&quot;&gt;#4474&lt;/a&gt; - Fix for &lt;code class=&quot;highlighter-rouge&quot;&gt;CDS&lt;/code&gt; reader requiring at least two description characters.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4474&quot;&gt;#4474&lt;/a&gt; - Fix for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CDS&lt;/code&gt; reader requiring at least two description characters.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h5 id=&quot;under-review-&quot;&gt;Under review :&lt;/h5&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4585&quot;&gt;#4585&lt;/a&gt; - Error handling in &lt;code class=&quot;highlighter-rouge&quot;&gt;io.fits.compression&lt;/code&gt; module.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4585&quot;&gt;#4585&lt;/a&gt; - Error handling in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;io.fits.compression&lt;/code&gt; module.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4574&quot;&gt;#4574&lt;/a&gt; - Allow passing of tuples for setting constraints on model parameters.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4551&quot;&gt;#4551&lt;/a&gt; - Explicitly set &lt;code class=&quot;highlighter-rouge&quot;&gt;BeautifulSoup&lt;/code&gt; parser to &lt;code class=&quot;highlighter-rouge&quot;&gt;html.parser&lt;/code&gt; to avoid warning.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4505&quot;&gt;#4505&lt;/a&gt; - Fix for allowing &lt;code class=&quot;highlighter-rouge&quot;&gt;WCS&lt;/code&gt; to take Image HDU.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4551&quot;&gt;#4551&lt;/a&gt; - Explicitly set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BeautifulSoup&lt;/code&gt; parser to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;html.parser&lt;/code&gt; to avoid warning.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/astropy/astropy/pull/4505&quot;&gt;#4505&lt;/a&gt; - Fix for allowing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WCS&lt;/code&gt; to take Image HDU.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;project-info&quot;&gt;Project Info&lt;/h1&gt;
@@ -158,56 +158,56 @@ I tried to use some functions like &lt;code class=&quot;highlighter-rouge&quot;&
 If this wrapped library is extended to wrap all functions under ERFA and exposed as a public API, this would help astropy to leverage a validated and trusted library to do computational “heavy-lifting” which might also lead to performance improvements.&lt;br /&gt;
 The two major aims of this project are&lt;/p&gt;
     &lt;ol&gt;
-      &lt;li&gt;Create a separate package under &lt;code class=&quot;highlighter-rouge&quot;&gt;liberfa&lt;/code&gt; which would be having 100% coverage for ERFA functions, good test coverage and documentation such that it follows all the guidelines for &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy&lt;/code&gt; affiliated package.&lt;/li&gt;
-      &lt;li&gt;Use the new package in astropy replacing &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; and discuss for replacing overlapping code between &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy&lt;/code&gt; python code and ERFA.&lt;/li&gt;
+      &lt;li&gt;Create a separate package under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;liberfa&lt;/code&gt; which would be having 100% coverage for ERFA functions, good test coverage and documentation such that it follows all the guidelines for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy&lt;/code&gt; affiliated package.&lt;/li&gt;
+      &lt;li&gt;Use the new package in astropy replacing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; and discuss for replacing overlapping code between &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy&lt;/code&gt; python code and ERFA.&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;h3 id=&quot;deliverables&quot;&gt;Deliverables&lt;/h3&gt;
     &lt;ol&gt;
-      &lt;li&gt;Working python based ERFA package wrapping original C based ERFA package, strictly adhering to &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy&lt;/code&gt; affiliated package guidelines.&lt;/li&gt;
-      &lt;li&gt;Removal of &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy._erfa&lt;/code&gt; and use of this new python based ERFA package as external (but bundled) dependency.&lt;/li&gt;
+      &lt;li&gt;Working python based ERFA package wrapping original C based ERFA package, strictly adhering to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy&lt;/code&gt; affiliated package guidelines.&lt;/li&gt;
+      &lt;li&gt;Removal of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy._erfa&lt;/code&gt; and use of this new python based ERFA package as external (but bundled) dependency.&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;h3 id=&quot;proposal-detailed-description&quot;&gt;Proposal Detailed Description&lt;/h3&gt;
     &lt;p&gt;ERFA is Essential Routines for Fundamental Astronomy which implements high-quality astronomical routines in C.&lt;br /&gt;
-  Currently astropy uses ERFA in &lt;code class=&quot;highlighter-rouge&quot;&gt;coordinates&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt; subpackages for some angle utilities, conversions and time conversion, formatting by using &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; subpackage.&lt;br /&gt;
-  But it has been under discussion in community for a long time (&lt;a href=&quot;https://github.com/astropy/astropy/pull/3123&quot;&gt;#3123&lt;/a&gt;, &lt;a href=&quot;https://github.com/astropy/astropy/pull/4571&quot;&gt;#4571&lt;/a&gt;) to use ERFA as an external package in &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy&lt;/code&gt; by exposing ERFA as public API. Recently (&lt;a href=&quot;https://github.com/astropy/astropy/pull/4664&quot;&gt;#4664&lt;/a&gt;) there has been also some discussion to whether replace python code in coordinates subpackage with ERFA code.&lt;br /&gt;
+  Currently astropy uses ERFA in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;coordinates&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time&lt;/code&gt; subpackages for some angle utilities, conversions and time conversion, formatting by using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; subpackage.&lt;br /&gt;
+  But it has been under discussion in community for a long time (&lt;a href=&quot;https://github.com/astropy/astropy/pull/3123&quot;&gt;#3123&lt;/a&gt;, &lt;a href=&quot;https://github.com/astropy/astropy/pull/4571&quot;&gt;#4571&lt;/a&gt;) to use ERFA as an external package in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy&lt;/code&gt; by exposing ERFA as public API. Recently (&lt;a href=&quot;https://github.com/astropy/astropy/pull/4664&quot;&gt;#4664&lt;/a&gt;) there has been also some discussion to whether replace python code in coordinates subpackage with ERFA code.&lt;br /&gt;
   Therefore exposing ERFA as public API would be beneficial for Astropy and the larger scientific Python community.&lt;br /&gt;
   I propose to do the following changes in two phases:&lt;/p&gt;
 
     &lt;ol&gt;
       &lt;li&gt;
         &lt;h4 id=&quot;phase-17-weeks---erfa-as-separate-package&quot;&gt;Phase 1(7 weeks) - ERFA as separate package&lt;/h4&gt;
-        &lt;p&gt;Right now for ERFA functionality, astropy uses &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt;   subpackage which wraps ERFA functions only from &lt;code class=&quot;highlighter-rouge&quot;&gt;Astronomy&lt;/code&gt; section, &lt;code class=&quot;highlighter-rouge&quot;&gt;AngleOps&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;SphericalCartesian&lt;/code&gt; subsections under &lt;code class=&quot;highlighter-rouge&quot;&gt;VectorMatrix&lt;/code&gt; section. &lt;br /&gt;
+        &lt;p&gt;Right now for ERFA functionality, astropy uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt;   subpackage which wraps ERFA functions only from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Astronomy&lt;/code&gt; section, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AngleOps&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SphericalCartesian&lt;/code&gt; subsections under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VectorMatrix&lt;/code&gt; section. &lt;br /&gt;
     In this phase I propose to increase wrapping and test coverage, improve function names and documentation.&lt;br /&gt;
     I intend to do this in 3 subphases:&lt;/p&gt;
         &lt;ol&gt;
           &lt;li&gt;
             &lt;h6 id=&quot;extension-of-wrapping&quot;&gt;Extension of wrapping&lt;/h6&gt;
             &lt;ul&gt;
-              &lt;li&gt;First I would start with Astropy affiliated package template and using the existing &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; code in it, to create a new package possibly named &lt;code class=&quot;highlighter-rouge&quot;&gt;pyerfa&lt;/code&gt;. Then I intend to extend it(wrapping) to all the remaining sections/subsections such that package could be imported as independent package, and all the ERFA  functions would work without worrying about correctness of the results, just get every ERFA function working.&lt;/li&gt;
-              &lt;li&gt;Currently functions under &lt;code class=&quot;highlighter-rouge&quot;&gt;CopyExtendExtract&lt;/code&gt; under &lt;code class=&quot;highlighter-rouge&quot;&gt;VectorMatrix&lt;/code&gt; do give some weird error on wrapping. So my first task would be to parse functions under &lt;code class=&quot;highlighter-rouge&quot;&gt;CopyExtendExtract&lt;/code&gt; correctly.&lt;/li&gt;
+              &lt;li&gt;First I would start with Astropy affiliated package template and using the existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; code in it, to create a new package possibly named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pyerfa&lt;/code&gt;. Then I intend to extend it(wrapping) to all the remaining sections/subsections such that package could be imported as independent package, and all the ERFA  functions would work without worrying about correctness of the results, just get every ERFA function working.&lt;/li&gt;
+              &lt;li&gt;Currently functions under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CopyExtendExtract&lt;/code&gt; under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VectorMatrix&lt;/code&gt; do give some weird error on wrapping. So my first task would be to parse functions under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CopyExtendExtract&lt;/code&gt; correctly.&lt;/li&gt;
               &lt;li&gt;Functions under other subsections were getting compiled correctly so next task would be to check that they are parsed correctly i.e. check if they do work and if not correct them.&lt;/li&gt;
-              &lt;li&gt;Existing &lt;code class=&quot;highlighter-rouge&quot;&gt;docstring&lt;/code&gt; parser would need to be modified such that new parts to the &lt;code class=&quot;highlighter-rouge&quot;&gt;docstrings&lt;/code&gt; could be added which are not present currently in original C library.&lt;/li&gt;
+              &lt;li&gt;Existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docstring&lt;/code&gt; parser would need to be modified such that new parts to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docstrings&lt;/code&gt; could be added which are not present currently in original C library.&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
           &lt;li&gt;
             &lt;h6 id=&quot;testing-of-wrappings&quot;&gt;Testing of wrappings&lt;/h6&gt;
             &lt;ul&gt;
               &lt;li&gt;In this subphase I intend to test rigorously all the new wrappings extended to ensure result correctness following Astropy guidelines for testing.&lt;/li&gt;
-              &lt;li&gt;This would involve testing the wrappings under different values of arguments and input types etc. using &lt;code class=&quot;highlighter-rouge&quot;&gt;py.test&lt;/code&gt; module and following Astropy standard for testing.&lt;/li&gt;
-              &lt;li&gt;Existing C test suite for ERFA (&lt;code class=&quot;highlighter-rouge&quot;&gt;t_erfa_c.c&lt;/code&gt;) would be ported to Python by automatic conversion in the similar manner, by creating parsing templates for test suite and test suite generator. Parts which couldn’t be ported, would be hand-written. Through this approach we would be having exactly same test suite as of original SOFA/ERFA tests.&lt;/li&gt;
+              &lt;li&gt;This would involve testing the wrappings under different values of arguments and input types etc. using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;py.test&lt;/code&gt; module and following Astropy standard for testing.&lt;/li&gt;
+              &lt;li&gt;Existing C test suite for ERFA (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t_erfa_c.c&lt;/code&gt;) would be ported to Python by automatic conversion in the similar manner, by creating parsing templates for test suite and test suite generator. Parts which couldn’t be ported, would be hand-written. Through this approach we would be having exactly same test suite as of original SOFA/ERFA tests.&lt;/li&gt;
               &lt;li&gt;Overall objective would be to create a test suite having coverage &amp;gt;= 90%.&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
           &lt;li&gt;
             &lt;h6 id=&quot;create-name-aliases-and-improve-documentation&quot;&gt;Create name aliases and improve documentation&lt;/h6&gt;
             &lt;ul&gt;
-              &lt;li&gt;In this subphase I would work on creating name aliases for the functions from ERFA as current names are very cryptic which don’t suit well for code readability and understanding. For example. &lt;code class=&quot;highlighter-rouge&quot;&gt;eraAb&lt;/code&gt; is a function in ERFA that performs aberration to transform natural direction into proper direction but this isn’t very much clear from this name. Documentation improvement would go hand in hand with name aliasing&lt;/li&gt;
+              &lt;li&gt;In this subphase I would work on creating name aliases for the functions from ERFA as current names are very cryptic which don’t suit well for code readability and understanding. For example. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eraAb&lt;/code&gt; is a function in ERFA that performs aberration to transform natural direction into proper direction but this isn’t very much clear from this name. Documentation improvement would go hand in hand with name aliasing&lt;/li&gt;
               &lt;li&gt;Name aliasing would involve manual work of checking code, work to be done by function, docs, arguments for function etc. and most importantly discussion with mentors to be done for every function.&lt;/li&gt;
-              &lt;li&gt;Documentation improvement would include updating of current &lt;code class=&quot;highlighter-rouge&quot;&gt;docstrings&lt;/code&gt; generated by C comments to include examples following &lt;code class=&quot;highlighter-rouge&quot;&gt;doctest&lt;/code&gt;, short summary and other notes  to follow &lt;code class=&quot;highlighter-rouge&quot;&gt;numpy&lt;/code&gt; style &lt;code class=&quot;highlighter-rouge&quot;&gt;docstrings&lt;/code&gt;.&lt;/li&gt;
+              &lt;li&gt;Documentation improvement would include updating of current &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docstrings&lt;/code&gt; generated by C comments to include examples following &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doctest&lt;/code&gt;, short summary and other notes  to follow &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;numpy&lt;/code&gt; style &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docstrings&lt;/code&gt;.&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
         &lt;/ol&gt;
@@ -218,19 +218,19 @@ The two major aims of this project are&lt;/p&gt;
  I intend to do this in 2 subphases:&lt;/p&gt;
         &lt;ol&gt;
           &lt;li&gt;
-            &lt;h6 id=&quot;update-_erfa-usage&quot;&gt;Update &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; usage&lt;/h6&gt;
+            &lt;h6 id=&quot;update-_erfa-usage&quot;&gt;Update &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; usage&lt;/h6&gt;
             &lt;ul&gt;
-              &lt;li&gt;As &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; would no longer be needed therefore update usages of &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; by the new package and get everything working&lt;/li&gt;
-              &lt;li&gt;This would be done by creating new ERFA package as external dependency by placing it in &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy/extern&lt;/code&gt; and update its usages. Then &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; would be removed.&lt;/li&gt;
+              &lt;li&gt;As &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; would no longer be needed therefore update usages of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; by the new package and get everything working&lt;/li&gt;
+              &lt;li&gt;This would be done by creating new ERFA package as external dependency by placing it in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy/extern&lt;/code&gt; and update its usages. Then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; would be removed.&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
           &lt;li&gt;
             &lt;h6 id=&quot;overlapping-code-replacement&quot;&gt;Overlapping code replacement&lt;/h6&gt;
             &lt;ul&gt;
               &lt;li&gt;This subphase would involve discussion to whether replace python code with ERFA based on the results of performance analysis.&lt;/li&gt;
-              &lt;li&gt;Here first I would try to find parts of code where ERFA could be used, mainly in &lt;code class=&quot;highlighter-rouge&quot;&gt;coordinates&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt; etc. This would be done by carefully looking at the existing codebase to check whether ERFA function would suit here.&lt;/li&gt;
+              &lt;li&gt;Here first I would try to find parts of code where ERFA could be used, mainly in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;coordinates&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time&lt;/code&gt; etc. This would be done by carefully looking at the existing codebase to check whether ERFA function would suit here.&lt;/li&gt;
               &lt;li&gt;Then using performance analysis and discussion with mentors replace the code for the parts where agreement comes.&lt;/li&gt;
-              &lt;li&gt;Performance analysis would be done using &lt;a href=&quot;https://github.com/spacetelescope/asv&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;asv&lt;/code&gt;&lt;/a&gt; by writing benchmarks first for existing code and then for code using ERFA.&lt;/li&gt;
+              &lt;li&gt;Performance analysis would be done using &lt;a href=&quot;https://github.com/spacetelescope/asv&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;asv&lt;/code&gt;&lt;/a&gt; by writing benchmarks first for existing code and then for code using ERFA.&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
         &lt;/ol&gt;
@@ -251,15 +251,15 @@ The two major aims of this project are&lt;/p&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Community bonding period (22 Apr - 22 May)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;Check &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy._erfa&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;liberfa/erfa&lt;/code&gt; code closely, discuss concrete approach with mentors, read documentation for &lt;code class=&quot;highlighter-rouge&quot;&gt;asv&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;cython&lt;/code&gt; .&lt;/td&gt;
+      &lt;td&gt;Check &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy._erfa&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;liberfa/erfa&lt;/code&gt; code closely, discuss concrete approach with mentors, read documentation for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;asv&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cython&lt;/code&gt; .&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Week 1 (23 May - 29 May)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;1. Setup new repository using &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy&lt;/code&gt; affiliated package guidelines and &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; existing code.&lt;br /&gt; 2. Make this repository work independently without Astropy.&lt;/td&gt;
+      &lt;td&gt;1. Setup new repository using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy&lt;/code&gt; affiliated package guidelines and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; existing code.&lt;br /&gt; 2. Make this repository work independently without Astropy.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Week 2 (30 May - 5 June)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;1. Extend to &lt;code class=&quot;highlighter-rouge&quot;&gt;CopyExtendExtract&lt;/code&gt; subsection.&lt;br /&gt; 2.Modify parsing templates.&lt;/td&gt;
+      &lt;td&gt;1. Extend to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CopyExtendExtract&lt;/code&gt; subsection.&lt;br /&gt; 2.Modify parsing templates.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Week 3 (6 June - 12 June)&lt;/strong&gt;&lt;/td&gt;
@@ -267,7 +267,7 @@ The two major aims of this project are&lt;/p&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Week 4 (13 June - 19 June)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;Port original test suite(&lt;code class=&quot;highlighter-rouge&quot;&gt;t_erfa_c.c&lt;/code&gt;) to Python is similar manner (automated like wrapping).&lt;/td&gt;
+      &lt;td&gt;Port original test suite(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t_erfa_c.c&lt;/code&gt;) to Python is similar manner (automated like wrapping).&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Week 5 (20 June - 26 June)&lt;/strong&gt;&lt;/td&gt;
@@ -279,11 +279,11 @@ The two major aims of this project are&lt;/p&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Week 8 (11 July - 17 July)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;1. Use new ERFA python wrappings package.&lt;br /&gt; 2.Remove existing &lt;code class=&quot;highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; subpackage from &lt;code class=&quot;highlighter-rouge&quot;&gt;astropy&lt;/code&gt;.&lt;/td&gt;
+      &lt;td&gt;1. Use new ERFA python wrappings package.&lt;br /&gt; 2.Remove existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_erfa&lt;/code&gt; subpackage from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;astropy&lt;/code&gt;.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Week 9 (18 July - 24 July )&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;Check carefully astropy code, mainly in sections &lt;code class=&quot;highlighter-rouge&quot;&gt;coordinates&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt; where existing python code could be replaced by ERFA function.&lt;/td&gt;
+      &lt;td&gt;Check carefully astropy code, mainly in sections &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;coordinates&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;time&lt;/code&gt; where existing python code could be replaced by ERFA function.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Weeks 10-11 (25 July - 7 August)&lt;/strong&gt;&lt;/td&gt;
@@ -341,17 +341,17 @@ It felt good because it has so many plugins, themes, and a really good CMS. You 
   &lt;li&gt;No good markdown support in Wordpress.&lt;/li&gt;
   &lt;li&gt;Wordpress is not git friendly. Though many tutorials and services do exist like &lt;a href=&quot;http://stevegrunwell.github.io/wordpress-git&quot;&gt;this&lt;/a&gt;, &lt;a href=&quot;https://revisr.io/&quot;&gt;this&lt;/a&gt; and much more but in the end, it just fell too much to do just for version controlling it.&lt;/li&gt;
   &lt;li&gt;It is mainly optimized for dynamic content and therefore slow.&lt;/li&gt;
-  &lt;li&gt;It is resource heavy. I used &lt;a href=&quot;https://aws.amazon.com/ec2/instance-types/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;t2.micro&lt;/code&gt;&lt;/a&gt; AWS EC2 instance to host it, and it was constantly crashing even with a meagre load of 50 clients per second on stress testing.&lt;/li&gt;
+  &lt;li&gt;It is resource heavy. I used &lt;a href=&quot;https://aws.amazon.com/ec2/instance-types/&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t2.micro&lt;/code&gt;&lt;/a&gt; AWS EC2 instance to host it, and it was constantly crashing even with a meagre load of 50 clients per second on stress testing.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;So I decided to give Jekyll a shot. To host it I used newly released &lt;a href=&quot;https://pages.gitlab.io/&quot;&gt;Gitlab Pages&lt;/a&gt; as it allows multiple CNAME records with custom SSL certificates. Moreover, they also provide free shared runners which could be configured as per requirements by modifying &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitlab-ci.yml&lt;/code&gt;. These features aren’t available on &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; (yet).&lt;/p&gt;
+&lt;p&gt;So I decided to give Jekyll a shot. To host it I used newly released &lt;a href=&quot;https://pages.gitlab.io/&quot;&gt;Gitlab Pages&lt;/a&gt; as it allows multiple CNAME records with custom SSL certificates. Moreover, they also provide free shared runners which could be configured as per requirements by modifying &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.gitlab-ci.yml&lt;/code&gt;. These features aren’t available on &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; (yet).&lt;/p&gt;
 
 &lt;p&gt;Setting up Jekyll was easy (though a bit difficult than  Wordpress which just needed to click buttons). There are numerous online guides available, I followed &lt;a href=&quot;http://joshualande.com/jekyll-github-pages-poole/&quot;&gt;http://joshualande.com/jekyll-github-pages-poole/&lt;/a&gt; with some of my own customizations like setting up tags, categories etc. &lt;br /&gt;
 It took around 2-3 hours to set up a working blog. You can check the code here &lt;a href=&quot;https://gitlab.com/anchitjain1234/anchitjain1234.gitlab.io&quot;&gt;https://gitlab.com/anchitjain1234/anchitjain1234.gitlab.io&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;To stress test the Jekyll,  I hosted the blog on a 512 MB RAM &lt;a href=&quot;https://www.digitalocean.com&quot;&gt;Digital Ocean&lt;/a&gt; droplet and tested it with &lt;a href=&quot;https://httpd.apache.org/docs/2.4/programs/ab.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ab&lt;/code&gt;&lt;/a&gt; for 20000 requests at 1000 concurrency level and it worked flawlessly (didn’t crash ever) even on 512 MB RAM.&lt;/p&gt;
+&lt;p&gt;To stress test the Jekyll,  I hosted the blog on a 512 MB RAM &lt;a href=&quot;https://www.digitalocean.com&quot;&gt;Digital Ocean&lt;/a&gt; droplet and tested it with &lt;a href=&quot;https://httpd.apache.org/docs/2.4/programs/ab.html&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ab&lt;/code&gt;&lt;/a&gt; for 20000 requests at 1000 concurrency level and it worked flawlessly (didn’t crash ever) even on 512 MB RAM.&lt;/p&gt;
 
-&lt;p&gt;Finally, I am pretty happy with Jekyll and Gitlab. I also like this workflow very much, use Sublime Text or Atom to write the post or edit the site and just &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; it to deploy.&lt;/p&gt;
+&lt;p&gt;Finally, I am pretty happy with Jekyll and Gitlab. I also like this workflow very much, use Sublime Text or Atom to write the post or edit the site and just &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt; it to deploy.&lt;/p&gt;
 </content>
  </entry>
  
