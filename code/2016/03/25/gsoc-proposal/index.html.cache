@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>GSoC Proposal | Anchit Jain</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="GSoC Proposal" />
+<meta name="author" content="Anchit Jain" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Here is my GSoC proposal. I have removed some of the personal information from it." />
+<meta property="og:description" content="Here is my GSoC proposal. I have removed some of the personal information from it." />
+<link rel="canonical" href="/code/2016/03/25/gsoc-proposal/" />
+<meta property="og:url" content="/code/2016/03/25/gsoc-proposal/" />
+<meta property="og:site_name" content="Anchit Jain" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-03-25T14:30:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="GSoC Proposal" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Anchit Jain"},"description":"Here is my GSoC proposal. I have removed some of the personal information from it.","url":"/code/2016/03/25/gsoc-proposal/","@type":"BlogPosting","headline":"GSoC Proposal","dateModified":"2016-03-25T14:30:00+00:00","datePublished":"2016-03-25T14:30:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/code/2016/03/25/gsoc-proposal/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="lf-EfvSUUTArDZIcVJvEaTOp2JkP3yYvXJ1cxQt1_Hc" />
+  <title>
+    
+      GSoC Proposal &middot; Anchit Jain
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="Anchit Jain" href="/atom.xml">
+</head>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74734471-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Anchit Jain</a>
+          <small></small>
+          
+            &nbsp;&nbsp;&nbsp;
+            <small><a href="/about">About</a></small>
+          
+            &nbsp;&nbsp;&nbsp;
+            <small><a href="/blog">Archive</a></small>
+          
+            &nbsp;&nbsp;&nbsp;
+            <small><a href="/atom.xml">Feed</a></small>
+          
+        </h3>
+      </header>
+
+      <main>
+        <article class="post">
+  <h1 class="post-title">GSoC Proposal</h1>
+  <time datetime="2016-03-25T14:30:00+00:00" class="post-date">25 Mar 2016</time>
+
+
+  <div class="post-tags">
+    Category:
+    <a href="/category/code">code</a>
+  </div>
+
+  <div class="post-tags">
+    Tag(s): 
+    
+    
+    <a href="/tag/gsoc">gsoc</a>
+    
+</div>
+
+  <br/>
+
+  <p>Here is my GSoC proposal. I have removed some of the personal information from it.</p>
+
+<h1 id="student-info">Student Info</h1>
+
+<p><strong>Name</strong>  Anchit Jain <br />
+<strong>Github</strong> <a href="https://github.com/anchitjain1234">anchitjain1234</a><br />
+<strong>IRC Nick</strong> anchitjain@freenode <br />
+<strong>Time Zone</strong> IST (UTC + 05:30)<br />
+<strong>GSOC Blog URL</strong> <a href="https://www.anchitja.in/blog/">http://www.anchitja.in/blog/</a><br />
+<strong>Blog RSS feed</strong> <a href="http://www.anchitja.in/atom.xml">http://www.anchitja.in/atom.xml/</a><br />
+<strong>University information</strong></p>
+
+<ul>
+  <li><strong>University name</strong> : <a href="http://www.bits-pilani.ac.in/">Birla Institute of Technology and Science Pilani</a></li>
+  <li><strong>Major</strong> : Computer Science, Economics</li>
+  <li><strong>Current Year</strong> : 4th</li>
+  <li><strong>Graduation Date</strong> : May 2017</li>
+  <li><strong>Degree</strong> : BE (Hons) Computer Science, MSc (Hons) Economics</li>
+</ul>
+
+<h1 id="code-sample">Code Sample</h1>
+
+<p>I have submitted following patches to <code class="language-plaintext highlighter-rouge">astropy</code></p>
+
+<h5 id="merged-">Merged :</h5>
+
+<ol>
+  <li><a href="https://github.com/astropy/astropy/pull/4606">#4606</a> - Support for Path objects in <code class="language-plaintext highlighter-rouge">io</code> packages.</li>
+  <li><a href="https://github.com/astropy/astropy/pull/4561">#4561</a> - Remove new line characters after last row of data in <code class="language-plaintext highlighter-rouge">ascii.latex.AASTex</code>.</li>
+  <li><a href="https://github.com/astropy/astropy/pull/4532">#4532</a> - Fix to generate zero-length copy of current table.</li>
+  <li><a href="https://github.com/astropy/astropy/pull/4482">#4482</a> - Displaying Compound model expressions when printing compound model instances.</li>
+  <li><a href="https://github.com/astropy/astropy/pull/4474">#4474</a> - Fix for <code class="language-plaintext highlighter-rouge">CDS</code> reader requiring at least two description characters.</li>
+</ol>
+
+<h5 id="under-review-">Under review :</h5>
+
+<ol>
+  <li><a href="https://github.com/astropy/astropy/pull/4585">#4585</a> - Error handling in <code class="language-plaintext highlighter-rouge">io.fits.compression</code> module.</li>
+  <li><a href="https://github.com/astropy/astropy/pull/4574">#4574</a> - Allow passing of tuples for setting constraints on model parameters.</li>
+  <li><a href="https://github.com/astropy/astropy/pull/4551">#4551</a> - Explicitly set <code class="language-plaintext highlighter-rouge">BeautifulSoup</code> parser to <code class="language-plaintext highlighter-rouge">html.parser</code> to avoid warning.</li>
+  <li><a href="https://github.com/astropy/astropy/pull/4505">#4505</a> - Fix for allowing <code class="language-plaintext highlighter-rouge">WCS</code> to take Image HDU.</li>
+</ol>
+
+<h1 id="project-info">Project Info</h1>
+
+<ul>
+  <li>
+    <h3 id="project-title">Project Title</h3>
+    <p>Implement Public API for ERFA</p>
+  </li>
+  <li>
+    <h3 id="project-abstract">Project Abstract</h3>
+    <p>Astropy currently uses wrapped version of ERFA library which covers some functions from original C library but not all.<br />
+If this wrapped library is extended to wrap all functions under ERFA and exposed as a public API, this would help astropy to leverage a validated and trusted library to do computational “heavy-lifting” which might also lead to performance improvements.<br />
+The two major aims of this project are</p>
+    <ol>
+      <li>Create a separate package under <code class="language-plaintext highlighter-rouge">liberfa</code> which would be having 100% coverage for ERFA functions, good test coverage and documentation such that it follows all the guidelines for <code class="language-plaintext highlighter-rouge">astropy</code> affiliated package.</li>
+      <li>Use the new package in astropy replacing <code class="language-plaintext highlighter-rouge">_erfa</code> and discuss for replacing overlapping code between <code class="language-plaintext highlighter-rouge">astropy</code> python code and ERFA.</li>
+    </ol>
+  </li>
+  <li>
+    <h3 id="deliverables">Deliverables</h3>
+    <ol>
+      <li>Working python based ERFA package wrapping original C based ERFA package, strictly adhering to <code class="language-plaintext highlighter-rouge">astropy</code> affiliated package guidelines.</li>
+      <li>Removal of <code class="language-plaintext highlighter-rouge">astropy._erfa</code> and use of this new python based ERFA package as external (but bundled) dependency.</li>
+    </ol>
+  </li>
+  <li>
+    <h3 id="proposal-detailed-description">Proposal Detailed Description</h3>
+    <p>ERFA is Essential Routines for Fundamental Astronomy which implements high-quality astronomical routines in C.<br />
+  Currently astropy uses ERFA in <code class="language-plaintext highlighter-rouge">coordinates</code> and <code class="language-plaintext highlighter-rouge">time</code> subpackages for some angle utilities, conversions and time conversion, formatting by using <code class="language-plaintext highlighter-rouge">_erfa</code> subpackage.<br />
+  But it has been under discussion in community for a long time (<a href="https://github.com/astropy/astropy/pull/3123">#3123</a>, <a href="https://github.com/astropy/astropy/pull/4571">#4571</a>) to use ERFA as an external package in <code class="language-plaintext highlighter-rouge">astropy</code> by exposing ERFA as public API. Recently (<a href="https://github.com/astropy/astropy/pull/4664">#4664</a>) there has been also some discussion to whether replace python code in coordinates subpackage with ERFA code.<br />
+  Therefore exposing ERFA as public API would be beneficial for Astropy and the larger scientific Python community.<br />
+  I propose to do the following changes in two phases:</p>
+
+    <ol>
+      <li>
+        <h4 id="phase-17-weeks---erfa-as-separate-package">Phase 1(7 weeks) - ERFA as separate package</h4>
+        <p>Right now for ERFA functionality, astropy uses <code class="language-plaintext highlighter-rouge">_erfa</code>   subpackage which wraps ERFA functions only from <code class="language-plaintext highlighter-rouge">Astronomy</code> section, <code class="language-plaintext highlighter-rouge">AngleOps</code> and <code class="language-plaintext highlighter-rouge">SphericalCartesian</code> subsections under <code class="language-plaintext highlighter-rouge">VectorMatrix</code> section. <br />
+    In this phase I propose to increase wrapping and test coverage, improve function names and documentation.<br />
+    I intend to do this in 3 subphases:</p>
+        <ol>
+          <li>
+            <h6 id="extension-of-wrapping">Extension of wrapping</h6>
+            <ul>
+              <li>First I would start with Astropy affiliated package template and using the existing <code class="language-plaintext highlighter-rouge">_erfa</code> code in it, to create a new package possibly named <code class="language-plaintext highlighter-rouge">pyerfa</code>. Then I intend to extend it(wrapping) to all the remaining sections/subsections such that package could be imported as independent package, and all the ERFA  functions would work without worrying about correctness of the results, just get every ERFA function working.</li>
+              <li>Currently functions under <code class="language-plaintext highlighter-rouge">CopyExtendExtract</code> under <code class="language-plaintext highlighter-rouge">VectorMatrix</code> do give some weird error on wrapping. So my first task would be to parse functions under <code class="language-plaintext highlighter-rouge">CopyExtendExtract</code> correctly.</li>
+              <li>Functions under other subsections were getting compiled correctly so next task would be to check that they are parsed correctly i.e. check if they do work and if not correct them.</li>
+              <li>Existing <code class="language-plaintext highlighter-rouge">docstring</code> parser would need to be modified such that new parts to the <code class="language-plaintext highlighter-rouge">docstrings</code> could be added which are not present currently in original C library.</li>
+            </ul>
+          </li>
+          <li>
+            <h6 id="testing-of-wrappings">Testing of wrappings</h6>
+            <ul>
+              <li>In this subphase I intend to test rigorously all the new wrappings extended to ensure result correctness following Astropy guidelines for testing.</li>
+              <li>This would involve testing the wrappings under different values of arguments and input types etc. using <code class="language-plaintext highlighter-rouge">py.test</code> module and following Astropy standard for testing.</li>
+              <li>Existing C test suite for ERFA (<code class="language-plaintext highlighter-rouge">t_erfa_c.c</code>) would be ported to Python by automatic conversion in the similar manner, by creating parsing templates for test suite and test suite generator. Parts which couldn’t be ported, would be hand-written. Through this approach we would be having exactly same test suite as of original SOFA/ERFA tests.</li>
+              <li>Overall objective would be to create a test suite having coverage &gt;= 90%.</li>
+            </ul>
+          </li>
+          <li>
+            <h6 id="create-name-aliases-and-improve-documentation">Create name aliases and improve documentation</h6>
+            <ul>
+              <li>In this subphase I would work on creating name aliases for the functions from ERFA as current names are very cryptic which don’t suit well for code readability and understanding. For example. <code class="language-plaintext highlighter-rouge">eraAb</code> is a function in ERFA that performs aberration to transform natural direction into proper direction but this isn’t very much clear from this name. Documentation improvement would go hand in hand with name aliasing</li>
+              <li>Name aliasing would involve manual work of checking code, work to be done by function, docs, arguments for function etc. and most importantly discussion with mentors to be done for every function.</li>
+              <li>Documentation improvement would include updating of current <code class="language-plaintext highlighter-rouge">docstrings</code> generated by C comments to include examples following <code class="language-plaintext highlighter-rouge">doctest</code>, short summary and other notes  to follow <code class="language-plaintext highlighter-rouge">numpy</code> style <code class="language-plaintext highlighter-rouge">docstrings</code>.</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <h5 id="phase-25-weeks---erfa-as-separate-package">Phase 2(5 weeks) - ERFA as separate package</h5>
+        <p>Under this phase my focus would be on to use this newly generated package within Astropy.<br />
+ I intend to do this in 2 subphases:</p>
+        <ol>
+          <li>
+            <h6 id="update-_erfa-usage">Update <code class="language-plaintext highlighter-rouge">_erfa</code> usage</h6>
+            <ul>
+              <li>As <code class="language-plaintext highlighter-rouge">_erfa</code> would no longer be needed therefore update usages of <code class="language-plaintext highlighter-rouge">_erfa</code> by the new package and get everything working</li>
+              <li>This would be done by creating new ERFA package as external dependency by placing it in <code class="language-plaintext highlighter-rouge">astropy/extern</code> and update its usages. Then <code class="language-plaintext highlighter-rouge">_erfa</code> would be removed.</li>
+            </ul>
+          </li>
+          <li>
+            <h6 id="overlapping-code-replacement">Overlapping code replacement</h6>
+            <ul>
+              <li>This subphase would involve discussion to whether replace python code with ERFA based on the results of performance analysis.</li>
+              <li>Here first I would try to find parts of code where ERFA could be used, mainly in <code class="language-plaintext highlighter-rouge">coordinates</code>, <code class="language-plaintext highlighter-rouge">time</code> etc. This would be done by carefully looking at the existing codebase to check whether ERFA function would suit here.</li>
+              <li>Then using performance analysis and discussion with mentors replace the code for the parts where agreement comes.</li>
+              <li>Performance analysis would be done using <a href="https://github.com/spacetelescope/asv"><code class="language-plaintext highlighter-rouge">asv</code></a> by writing benchmarks first for existing code and then for code using ERFA.</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h1 id="timeline">Timeline</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Work</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Community bonding period (22 Apr - 22 May)</strong></td>
+      <td>Check <code class="language-plaintext highlighter-rouge">astropy._erfa</code> and <code class="language-plaintext highlighter-rouge">liberfa/erfa</code> code closely, discuss concrete approach with mentors, read documentation for <code class="language-plaintext highlighter-rouge">asv</code>, <code class="language-plaintext highlighter-rouge">cython</code> .</td>
+    </tr>
+    <tr>
+      <td><strong>Week 1 (23 May - 29 May)</strong></td>
+      <td>1. Setup new repository using <code class="language-plaintext highlighter-rouge">astropy</code> affiliated package guidelines and <code class="language-plaintext highlighter-rouge">_erfa</code> existing code.<br /> 2. Make this repository work independently without Astropy.</td>
+    </tr>
+    <tr>
+      <td><strong>Week 2 (30 May - 5 June)</strong></td>
+      <td>1. Extend to <code class="language-plaintext highlighter-rouge">CopyExtendExtract</code> subsection.<br /> 2.Modify parsing templates.</td>
+    </tr>
+    <tr>
+      <td><strong>Week 3 (6 June - 12 June)</strong></td>
+      <td>1. Extend to new sections of ERFA.<br /> 2.Make whole package working.</td>
+    </tr>
+    <tr>
+      <td><strong>Week 4 (13 June - 19 June)</strong></td>
+      <td>Port original test suite(<code class="language-plaintext highlighter-rouge">t_erfa_c.c</code>) to Python is similar manner (automated like wrapping).</td>
+    </tr>
+    <tr>
+      <td><strong>Week 5 (20 June - 26 June)</strong></td>
+      <td>1. Convert manually tests which couldn’t be converted by automation.<br /> 2.Ensure good coverage.</td>
+    </tr>
+    <tr>
+      <td><strong>Weeks 6-7 (27 June - 10 July)</strong></td>
+      <td>1. Create name aliases after discussion with mentors. <br /> 2.Improve documentation to Astropy standard.</td>
+    </tr>
+    <tr>
+      <td><strong>Week 8 (11 July - 17 July)</strong></td>
+      <td>1. Use new ERFA python wrappings package.<br /> 2.Remove existing <code class="language-plaintext highlighter-rouge">_erfa</code> subpackage from <code class="language-plaintext highlighter-rouge">astropy</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Week 9 (18 July - 24 July )</strong></td>
+      <td>Check carefully astropy code, mainly in sections <code class="language-plaintext highlighter-rouge">coordinates</code> and <code class="language-plaintext highlighter-rouge">time</code> where existing python code could be replaced by ERFA function.</td>
+    </tr>
+    <tr>
+      <td><strong>Weeks 10-11 (25 July - 7 August)</strong></td>
+      <td>Write benchmarks to evaluate performance of existing code and code after replacing with ERFA.</td>
+    </tr>
+    <tr>
+      <td><strong>Week 12-13 (8 August - 23 August)</strong></td>
+      <td>1. Discuss with mentors after performance analysis which parts to replace and which not.<br /> 2.Complete all the remaining spilled work from previous phases.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="other-commitments">Other Commitments</h1>
+
+<ol>
+  <li><strong>Do you have any other commitments during the main GSoC time period, May 23rd to August 23rd?</strong>
+    <ul>
+      <li>My end semester examinations would be from 4 May - 15 May, so I would not be able to do much research then.</li>
+      <li>My new semester would be starting from 1 August, this might decrease my productivity, but I would try my best to not let it affect me.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Have you applied with any other organizations?</strong><br />
+No. I have just applied to Astropy.</p>
+  </li>
+  <li><strong>Have you participated previously in GSoC? when? with which project?</strong><br />
+No. This is first time I am applying for GSoC.</li>
+</ol>
+
+<h1 id="extra-information">Extra information</h1>
+
+<p><strong>Link to Resume</strong> <a href="http://www.anchitja.in/assets/resume.pdf/">resume</a></p>
+
+<p><strong>Alternate contacts</strong></p>
+
+<ul>
+  <li><strong>Facebook</strong> <a href="https://www.facebook.com/anchit.jain.1234">anchit.jain.1234</a></li>
+  <li><strong>Twitter</strong> : <a href="https://twitter.com/anchitjain1234">anchitjain1234</a></li>
+</ul>
+
+
+</article>
+
+
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'anchitblog'; 
+        // var disqus_developer = 1; // Comment out when the site is live
+        var disqus_identifier = "/code/2016/03/25/gsoc-proposal/";
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/general/2016/03/15/moving-to-jekyll/">Older</a>
+  
+  
+    <a class="pagination-item newer" href="/code/2016/04/05/erfa-wrapping-extension/">Newer</a>
+  
+</div>
+
+
+<aside class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/code/2016/05/15/GSoC-rejection/">
+            GSoC Rejection
+            <small><time datetime="2016-05-15T08:30:00+00:00">15 May 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/code/2016/04/05/erfa-wrapping-extension/">
+            ERFA Wrapping Extension
+            <small><time datetime="2016-04-05T14:30:00+00:00">05 Apr 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/general/2016/03/15/moving-to-jekyll/">
+            Moving to Jekyll
+            <small><time datetime="2016-03-15T14:30:00+00:00">15 Mar 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</aside>
+
+
+      </main>
+
+      <footer class="footer">
+          &copy; <time datetime="2023-05-06T12:28:24+00:00">2023</time>. All rights reserved.
+      </footer>
+    </div>
+
+  </body>
+</html>

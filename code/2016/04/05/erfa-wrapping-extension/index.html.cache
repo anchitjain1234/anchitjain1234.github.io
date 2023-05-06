@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>ERFA Wrapping Extension | Anchit Jain</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="ERFA Wrapping Extension" />
+<meta name="author" content="Anchit Jain" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hi everyone," />
+<meta property="og:description" content="Hi everyone," />
+<link rel="canonical" href="/code/2016/04/05/erfa-wrapping-extension/" />
+<meta property="og:url" content="/code/2016/04/05/erfa-wrapping-extension/" />
+<meta property="og:site_name" content="Anchit Jain" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-04-05T14:30:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ERFA Wrapping Extension" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Anchit Jain"},"description":"Hi everyone,","url":"/code/2016/04/05/erfa-wrapping-extension/","@type":"BlogPosting","headline":"ERFA Wrapping Extension","dateModified":"2016-04-05T14:30:00+00:00","datePublished":"2016-04-05T14:30:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/code/2016/04/05/erfa-wrapping-extension/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="lf-EfvSUUTArDZIcVJvEaTOp2JkP3yYvXJ1cxQt1_Hc" />
+  <title>
+    
+      ERFA Wrapping Extension &middot; Anchit Jain
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="Anchit Jain" href="/atom.xml">
+</head>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74734471-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Anchit Jain</a>
+          <small></small>
+          
+            &nbsp;&nbsp;&nbsp;
+            <small><a href="/about">About</a></small>
+          
+            &nbsp;&nbsp;&nbsp;
+            <small><a href="/blog">Archive</a></small>
+          
+            &nbsp;&nbsp;&nbsp;
+            <small><a href="/atom.xml">Feed</a></small>
+          
+        </h3>
+      </header>
+
+      <main>
+        <article class="post">
+  <h1 class="post-title">ERFA Wrapping Extension</h1>
+  <time datetime="2016-04-05T14:30:00+00:00" class="post-date">05 Apr 2016</time>
+
+
+  <div class="post-tags">
+    Category:
+    <a href="/category/code">code</a>
+  </div>
+
+  <div class="post-tags">
+    Tag(s): 
+    
+    
+    <a href="/tag/gsoc">gsoc</a>,
+    
+    <a href="/tag/erfa">erfa</a>
+    
+</div>
+
+  <br/>
+
+  <p>Hi everyone,</p>
+
+<p>This year I am applying for <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> under <a href="http://openastronomy.org/">OpenAstronomy</a> umbrella organization to <a href="https://github.com/astropy/astropy">Astropy</a>. My project idea is Implement Public API for ERFA. You can view my proposal in the previous post <a href="/code/2016/03/25/gsoc-proposal/">here</a>.</p>
+
+<p>In this blog post, I am going to explain about ERFA and its use in Astropy.</p>
+
+<p>ERFA is a C library containing key algorithms for astronomy and is based on the <a href="http://www.iausofa.org/">SOFA</a> library published by the <a href="http://www.iau.org/">International Astronomical Union</a> (IAU). It implements high-quality astronomical routines for coordinate, time etc. More about ERFA can be seen <a href="https://github.com/liberfa/erfa">here</a>.</p>
+
+<p>In Astropy <code class="language-plaintext highlighter-rouge">_erfa</code> is a python interface, not publically exposed, which wraps around original C functions, creating and exposing vectorized versions of them.
+Main parts in <code class="language-plaintext highlighter-rouge">_erfa</code> are  Jinja 2 templates <code class="language-plaintext highlighter-rouge">core.c.templ</code> and <code class="language-plaintext highlighter-rouge">core.py.templ</code>. These combined with <code class="language-plaintext highlighter-rouge">erfa_generator.py</code> generates the wrapper code, splitting the wrappers into python portion <code class="language-plaintext highlighter-rouge">core.py</code> and C portion <code class="language-plaintext highlighter-rouge">core.c</code>.</p>
+
+<p>The main goal of my project is to pull out pull this wrapper out of astropy and instead make a standalone Python wrapper library so that any project can use it without needing Astropy.</p>
+
+<p>To get to know the extent to which the modifications in existing wrapper would be needed I tried to do some quick <em>hacks</em> on it.</p>
+
+<p>Currently <code class="language-plaintext highlighter-rouge">astropy._erfa</code> wraps only from <code class="language-plaintext highlighter-rouge">Astronomy</code> section and <code class="language-plaintext highlighter-rouge">AngleOps</code>, <code class="language-plaintext highlighter-rouge">SphericalCartesian</code> subsections under <code class="language-plaintext highlighter-rouge">VectorMatrix</code> section from the original erfa library. This could be checked in <code class="language-plaintext highlighter-rouge">erfa_generator.py</code> <a href="https://github.com/astropy/astropy/blob/master/astropy/_erfa/erfa_generator.py#L398">here</a>.</p>
+
+<p>To test how the current infrastructure works if it is wrapped to all the sections of original erfa library I modified above code to always <code class="language-plaintext highlighter-rouge">True</code> condition</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="bp">True</span><span class="p">:</span></code></pre></figure>
+
+<p>and compiled the whole project again.
+And it failed. The error was:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>astropy/_erfa/core.c: In function ‘Py_cr’:
+astropy/_erfa/core.c:5376:9: error: too few arguments to function ‘eraCr’
+eraCr(*_r);
+^
+In file included from astropy/_erfa/core.c:14:0:
+cextern/erfa/erfa.h:376:6: note: declared here
+void eraCr(double r[3][3], double c[3][3]);
+^
+error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+</code></pre></div></div>
+
+<p>Above error suggests that <code class="language-plaintext highlighter-rouge">eraCr</code> function was not wrapped correctly, which would need changing the templates.</p>
+
+<p>To test for other remaining sections I modified the code to</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">subsection</span> <span class="o">==</span> <span class="s">"CopyExtendExtract"</span><span class="p">):</span></code></pre></figure>
+
+<p>This time, it compiled successfully and the whole package was set up.
+I tried to use some functions like <code class="language-plaintext highlighter-rouge">eraPmp</code> etc. and they all worked correctly. But it all needs to be checked carefully.</p>
+
+<p>From this little exercise, I was able to somewhat understand the workflow in <code class="language-plaintext highlighter-rouge">_erfa</code> and relate to the changes the project would be needing.</p>
+
+
+</article>
+
+
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'anchitblog'; 
+        // var disqus_developer = 1; // Comment out when the site is live
+        var disqus_identifier = "/code/2016/04/05/erfa-wrapping-extension/";
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/code/2016/03/25/gsoc-proposal/">Older</a>
+  
+  
+    <a class="pagination-item newer" href="/code/2016/05/15/GSoC-rejection/">Newer</a>
+  
+</div>
+
+
+<aside class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/code/2016/05/15/GSoC-rejection/">
+            GSoC Rejection
+            <small><time datetime="2016-05-15T08:30:00+00:00">15 May 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/code/2016/03/25/gsoc-proposal/">
+            GSoC Proposal
+            <small><time datetime="2016-03-25T14:30:00+00:00">25 Mar 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/general/2016/03/15/moving-to-jekyll/">
+            Moving to Jekyll
+            <small><time datetime="2016-03-15T14:30:00+00:00">15 Mar 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</aside>
+
+
+      </main>
+
+      <footer class="footer">
+          &copy; <time datetime="2023-05-06T12:28:24+00:00">2023</time>. All rights reserved.
+      </footer>
+    </div>
+
+  </body>
+</html>
